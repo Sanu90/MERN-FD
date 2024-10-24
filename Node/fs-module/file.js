@@ -41,3 +41,16 @@ const fs = require("fs");
 //   }
 // });
 
+// Append file synchronous
+let currentDate = new Date();
+let id = Math.floor(1000 + Math.random() * 9999);
+let val = fs.appendFileSync("./newFile.txt", `\n${currentDate}--> ${id}\n`); // \n is used to append data to next line. Else it will be continued where the old data is.
+
+// This is used  to delete a file
+// fs.unlink("./newFile.txt", (err) => {
+//   if (err) {
+//     console.log("error while deleting");
+//   } else {
+//     console.log("file deleted successfully");
+//   }
+// });
