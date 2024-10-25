@@ -1,0 +1,3 @@
+[{"name":"Housad","id":"MM88","age":28,"contact":9812121108,"Gratuity":false}]
+ [{"name":"girija","id":"Z20P","age":30,"contact":9855045108,"Gratuity":false}]
+ [{"name":"deepak","id":"J99O","age":33,"contact":9002575108,"Gratuity":false}]
