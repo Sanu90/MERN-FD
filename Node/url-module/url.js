@@ -20,15 +20,15 @@
 // server.listen(1118, () => console.log("Server running"));
 
 //using URL class//
-const { URL } = require("url");
-const myURL = new URL("http://example.com/path?product=book&price=20");
-console.log("myURL-->", myURL);
-console.log(myURL.protocol);
-console.log(myURL.host);
-console.log(myURL.pathname);
-console.log(myURL.search);
-console.log(myURL.searchParams.get("product"));
-console.log(myURL.searchParams.get("price"));
+// const { URL } = require("url");
+// const myURL = new URL("http://example.com/path?product=book&price=20");
+// console.log("myURL-->", myURL);
+// console.log(myURL.protocol);
+// console.log(myURL.host);
+// console.log(myURL.pathname);
+// console.log(myURL.search);
+// console.log(myURL.searchParams.get("product"));
+// console.log(myURL.searchParams.get("price"));
 
 // using parse method //
 // const url = require("url");
@@ -38,3 +38,18 @@ console.log(myURL.searchParams.get("price"));
 // console.log("\n", myURL.pathname);
 // console.log("\n", myURL.search);
 // console.log("\n", myURL.query.product, "--->", myURL.query.price);
+
+const url = require("url");
+
+const providedURL =
+  "https://example.com:8080/path/page?name=John&age=30#section2";
+
+// console.log(providedURL);
+
+const parseURL = url.parse(providedURL, true);
+console.log(parseURL.protocol);
+console.log(parseURL.hostname);
+console.log(parseURL.port);
+console.log(parseURL.pathname);
+console.log(parseURL.search);
+console.log(parseURL.query.name, " ", parseURL.query.age);
