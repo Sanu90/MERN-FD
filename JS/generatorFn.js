@@ -5,6 +5,7 @@ function* counter(i) {
 }
 
 const c = counter(1);
+console.log(c.next());
 console.log(c.next().value);
-console.log(c.next().value);
-console.log(c.next().value);
+console.log(c.next());
+console.log(c.next());
