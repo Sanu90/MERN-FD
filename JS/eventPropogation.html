@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Propagation</title>
+    <style>
+      body {
+        background-color: pink;
+      }
+      div {
+        width: 500px;
+        height: 200px;
+        background-color: aliceblue;
+      }
+
+      button1 {
+        color: aqua;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <br />
+      This is div<br /><br /><br />
+      <form action="">
+        This is form<br /><br /><br />
+        <button>This is button</button>
+      </form>
+    </div>
+  </body>
+  <script>
+    const div = document.querySelector("div");
+    const form = document.querySelector("form");
+    const button1 = document.querySelector("button");
+
+    div.addEventListener("click", () => {
+      alert("div clicked");
+    });
+
+    form.addEventListener("click", () => {
+      alert("form is clicked");
+    });
+
+    button1.addEventListener("click", () => {
+      alert("button is clicked");
+    });
+  </script>
+</html>
