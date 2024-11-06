@@ -50,11 +50,24 @@
     // difference between current target and target
 
     //EVENT CAPTURING
-    div.addEventListener("click", func, { capture: true });
-    form.addEventListener("click", func, { capture: true });
-    button1.addEventListener("click", func, { capture: true });
+    div.addEventListener(
+      "click",
+      func
+      // { capture: true }
+    );
+    form.addEventListener(
+      "click",
+      func
+      // { capture: true }
+    );
+    button1.addEventListener(
+      "click",
+      func
+      // { capture: true }
+    );
 
     function func(e) {
+      e.stopPropagation();
       alert("current target-->" + e.currentTarget.tagName);
       alert("target-->" + e.target.tagName);
     }
