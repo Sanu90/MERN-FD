@@ -35,16 +35,28 @@
     const form = document.querySelector("form");
     const button1 = document.querySelector("button");
 
-    div.addEventListener("click", () => {
-      alert("div clicked");
-    });
+    //EVENT BUBBLING
+    // div.addEventListener("click", () => {
+    //   alert("div clicked");
+    // });
 
-    form.addEventListener("click", () => {
-      alert("form is clicked");
-    });
+    // form.addEventListener("click", () => {
+    //   alert("form is clicked");
+    // });
 
-    button1.addEventListener("click", () => {
-      alert("button is clicked");
-    });
+    // button1.addEventListener("click", () => {
+    //   alert("button is clicked");
+    // });
+    // difference between current target and target
+
+    //EVENT CAPTURING
+    div.addEventListener("click", func, { capture: true });
+    form.addEventListener("click", func, { capture: true });
+    button1.addEventListener("click", func, { capture: true });
+
+    function func(e) {
+      alert("current target-->" + e.currentTarget.tagName);
+      alert("target-->" + e.target.tagName);
+    }
   </script>
 </html>
