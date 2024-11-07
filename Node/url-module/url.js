@@ -42,7 +42,7 @@
 const url = require("url");
 
 const providedURL =
-  "https://example.com:8080/path/page?name=John&age=30#section2";
+  "https://example.com:8080/path/page/a?name=John&age=30#section2";
 
 // console.log(providedURL);
 
