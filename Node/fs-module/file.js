@@ -1,4 +1,4 @@
-const fs = require("fs");
+// const fs = require("fs");
 
 // synchronous way: write
 
@@ -42,9 +42,9 @@ const fs = require("fs");
 // });
 
 // Append file synchronous
-let currentDate = new Date();
-let id = Math.floor(1000 + Math.random() * 9999);
-let val = fs.appendFileSync("./newFile.txt", `\n${currentDate}--> ${id}\n`); // \n is used to append data to next line. Else it will be continued where the old data is.
+// let currentDate = new Date();
+// let id = Math.floor(1000 + Math.random() * 9999);
+// let val = fs.appendFileSync("./newFile.txt", `\n${currentDate}--> ${id}\n`); // \n is used to append data to next line. Else it will be continued where the old data is.
 
 // This is used  to delete a file
 // fs.unlink("./newFile.txt", (err) => {
@@ -54,3 +54,10 @@ let val = fs.appendFileSync("./newFile.txt", `\n${currentDate}--> ${id}\n`); // 
 //     console.log("file deleted successfully");
 //   }
 // });
+
+const fs = require("fs");
+fs.readFile("./create1.txt", "utf-8", (err, data) => {
+  if (err) throw err;
+  console.log(data);
+});
+console.log("Done");

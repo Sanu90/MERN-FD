@@ -8,10 +8,18 @@ const fs = require("fs");
 //   }
 // });
 
-fs.copyFile("./createNewFile.txt", "./create1.txt", (error) => {
-  if (error) {
-    console.log("error while copying file", error);
+// fs.copyFile("./createNewFile.txt", "./create1.txt", (error) => {
+//   if (error) {
+//     console.log("error while copying file", error);
+//   } else {
+//     console.log("file copied successfully");
+//   }
+// });
+
+fs.unlink("./createObj.txt", (err) => {
+  if (err) {
+    console.log(err);
   } else {
-    console.log("file copied successfully");
+    console.log("file deleted");
   }
 });
