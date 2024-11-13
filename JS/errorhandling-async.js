@@ -1,13 +1,17 @@
-async function hello() {
+async function hello1() {
+  let value = 0;
   try {
-    let response = await fetch("https://jsonplaceholder.typicode.com/posts");
-    console.log("hey response", response);
-    const data = await response.json();
-    console.log("data is", data);
-    console.log("The end");
+    const getPromise = await new Promise((resolve, reject) => {
+      if (value > 5) {
+        resolve("Done");
+      } else {
+        reject("Not Done");
+      }
+    });
+    console.log("getPromise is-->", getPromise);
   } catch (error) {
-    console.log("error handling hello", error);
+    console.log("Error happened", error);
   }
 }
 
-hello();
+hello1();
