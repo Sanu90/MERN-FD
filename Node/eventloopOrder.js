@@ -2,7 +2,7 @@ console.log(1);
 
 setImmediate(() => console.log(2));
 
-setTimeout(() => console.log(3), 10);
+setTimeout(() => console.log(3), 1000);
 console.log(4);
 
 process.nextTick(() => console.log(5));
