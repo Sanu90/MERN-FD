@@ -32,7 +32,7 @@ async function dataFetch() {
   try {
     //throw new Error("Nadakkila");
     const response = await fetch(
-      `https://jsonplaceholder.typicode.com/sanup`
+      `https://jsonplaceholder.typicode.com/users/2`
     );
 
     if (response.status != 200) {
