@@ -6,8 +6,8 @@
 
 try {
   const error = new Error("Oops..");
-  error.name = "Sanup"; // explicitly changing error name
-  error.message = "podappa"; // explicitly changing error message
+  //error.name = "Sanup"; // explicitly changing error name
+  //error.message = "podappa"; // explicitly changing error message
   throw error;
 } catch (e) {
   console.error(`${e.name}: ${e.message}`);
