@@ -60,14 +60,32 @@ class linkedList {
     }
   }
 
-  delete(value) {
-    if (this.isEmpty()) {
-      console.log("List is empty already");
+  // insert new node in between.
+
+  insert(value, index) {
+    const node = new Node(value);
+    if (index > this.size) {
+      return `invalid operation. pls check again`;
     }
-    while(curr){
-      
+    if (index === 1) {
+      this.prepend(value);
+    } else {
+      let curr = this.head;
+      for (let i = 1; i < index; i++) {
+        curr = curr.next;
+        
+      }
     }
   }
+
+  // delete(value) {
+  //   if (this.isEmpty()) {
+  //     console.log("List is empty already");
+  //   }
+  //   while(curr){
+
+  //   }
+  // }
 }
 
 const list = new linkedList();
