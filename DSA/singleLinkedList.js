@@ -1,3 +1,5 @@
+// single linked list
+
 class Node {
   constructor(value) {
     this.value = value;
@@ -10,15 +12,12 @@ class linkedList {
     this.head = null;
     this.size = 0;
   }
-
   isEmpty() {
     return this.size == 0;
   }
-
   getSize() {
     return this.size;
   }
-
   prepend(value) {
     const node = new Node(value);
     if (this.isEmpty()) {
@@ -46,23 +45,35 @@ class linkedList {
 
   display() {
     if (this.isEmpty()) {
-      console.log("empty list");
+      console.log("Empty list");
     } else {
       let curr = this.head;
-      let values = "";
+      let showData = "";
+      let totalSum = 0;
       while (curr) {
-        values += `${curr.value}, `;
+        showData += `${curr.value} `;
+        totalSum += curr.value;
         curr = curr.next;
       }
-      console.log("list is-->", values);
+      console.log("Data is-->", showData);
+      console.log("Sum of linkedlist-->", totalSum);
+    }
+  }
+
+  delete(value) {
+    if (this.isEmpty()) {
+      console.log("List is empty already");
+    }
+    while(curr){
+      
     }
   }
 }
 
 const list = new linkedList();
-list.prepend(10);
+
+list.append(10);
 list.append(20);
-list.append(30);
-list.prepend(40);
-console.log(list.isEmpty(), list.getSize());
+list.prepend(5);
 list.display();
+console.log(list.getSize());

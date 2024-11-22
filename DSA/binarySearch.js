@@ -1,49 +1,41 @@
-let array = [1, 2, 3, 4, 5, 6, 7, 9];
-let value = 1;
+// linear search
 
-// normal method //
+// const array=[10,18,17,1,19,8];
+// const findValue = 80;
 
-// function binarySearch(array, value) {
-//   let left = 0;
-//   let right = array.length - 1;
-
-//   while (left <= right) {
-//     let mid = Math.floor((left + right) / 2);
-//     if (value === array[mid]) {
-//       console.log("Value found at position");
-//       return mid;
-//     }
-//     if (value > array[mid]) {
-//       right = mid - 1;
-//     } else {
-//       left = mid + 1;
-//     }
+// function linearSearch(array,findValue){
+// for(let i=0;i<array.length;i++){
+//   if(findValue===array[i]){
+//     return `found at index:${i}`;
 //   }
-//   return "not found";
+// }
+// return `not found`;
 // }
 
-// console.log(binarySearch(array, value));
+// console.log(linearSearch(array,findValue));
 
-// using recursion //
+// Binary search
 
-function binarySearch(array, value) {
-  return search(array, value, 0, array.length - 1);
+const array = [1, 8, 10, 17, 18, 19];
+const findValue = 8;
+
+function binarySearch(array, findValue) {
+  return search(array, findValue, 0, array.length - 1);
 }
 
-function search(array, value, left, right) {
+function search(array, findValue, left, right) {
   if (left > right) {
-    return "not found";
+    return `value not in array`;
   }
-
-  let mid = Math.floor((left + right) / 2);
-  if (value === array[mid]) {
-    return mid;
+  let middle = Math.floor((left + right) / 2);
+  if (findValue == array[middle]) {
+    return `element at index: ${middle}`;
   }
-  if (value < array[mid]) {
-    return search(array, value, 0, mid - 1);
+  if (findValue < array[middle]) {
+    return search(array, findValue, left, middle - 1);
   } else {
-    return search(array, value, mid + 1, array.length - 1);
+    return search(array, findValue, middle + 1, right);
   }
 }
 
-console.log(binarySearch(array, value));
+console.log(binarySearch(array, findValue));
