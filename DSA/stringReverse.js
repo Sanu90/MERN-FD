@@ -1,4 +1,4 @@
-let word = "full_domain";
+// let word = "full_domain";
 
 // REVERSE A STRING USING RECURSION.
 
@@ -13,12 +13,27 @@ let word = "full_domain";
 
 // REVERSE USING STACK METHOD
 
+// function reverseString(word) {
+//   if (word === "") {
+//     return "";
+//   }
+
+//   return reverseString(word.slice(1)) + word[0];
+// }
+
+// console.log(reverseString(word));
+
+let word = "full_domain";
+// console.log(word.slice(-1));
+// console.log(word.slice(0, word.length - 1));
+// console.log(word.slice(-1));
+// console.log(word.slice(0, word.length - 1));
+
 function reverseString(word) {
-  if (word === "") {
+  if (word.length == "") {
     return "";
   }
-
-  return reverseString(word.slice(1)) + word[0];
+  return word.slice(-1) + reverseString(word.slice(0, word.length - 1));
 }
 
 console.log(reverseString(word));
