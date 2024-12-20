@@ -10,5 +10,3 @@ console.log(arr1);
 console.log(str.split(""));
 
 // using Array.from() method //
-
-
